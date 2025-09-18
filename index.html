@@ -1,140 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Niloofar Jazaeri — Ph.D. Computer Science</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Niloofar Jazaeri — Senior Data Science Researcher</title>
   <style>
-    body { 
-      font-family: Arial, sans-serif; 
-      line-height: 1.6; 
-      margin: 0; 
-      padding: 0; 
-      background: #f9f9f9; 
-      color: #333; 
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#4f8cff;
+      --muted:#9aa7bf;
+      --glass: rgba(255,255,255,0.03);
+      --radius:12px;
+      --maxw:1000px;
+      font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
     }
-    header { 
-      background: #003366; 
-      color: white; 
-      padding: 2rem; 
-      text-align: center; 
+    html,body{height:100%;margin:0;background:
+      radial-gradient(1200px 600px at 10% 10%, rgba(79,140,255,0.06), transparent 8%),
+      linear-gradient(180deg, #071027 0%, #0f1724 100%);
+      color:#e6eef8;}
+    .wrap{max-width:var(--maxw);margin:32px auto;padding:20px;}
+    header.hero{
+      display:flex;gap:24px;align-items:center;padding:28px;border-radius:var(--radius);
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+      box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
     }
-    header h1 { margin: 0; }
-    section { 
-      padding: 2rem; 
-      max-width: 900px; 
-      margin: 1rem auto; 
-      background: white; 
-      border-radius: 6px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    .avatar{
+      width:120px;height:120px;border-radius:14px;background:linear-gradient(135deg,var(--accent),#9be0ff);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:#04233a;font-size:28px;
+      flex-shrink:0;
     }
-    h2 { color: #003366; border-bottom: 2px solid #eee; padding-bottom: .3rem; }
-    ul { padding-left: 1.2rem; }
-    .contact { margin-top: .5rem; }
-    .contact a { color: #a9d2ff; text-decoration: none; }
-    .meta { color: #dfeeff; margin-top: .4rem; font-size: 0.95rem; }
-    footer { 
-      text-align: center; 
-      padding: 1rem; 
-      font-size: 0.9em; 
-      background: #003366; 
-      color: white; 
-      margin-top: 1rem;
+    .hero-text h1{margin:0;font-size:1.6rem;letter-spacing:-0.4px;}
+    .hero-text p.lead{margin:8px 0 12px;color:var(--muted);max-width:68ch;}
+    .badges{display:flex;gap:8px;flex-wrap:wrap;}
+    .badge{background:var(--glass);color:var(--muted);padding:6px 10px;border-radius:999px;font-size:0.85rem}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:18px;}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent); padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6);color:#dfeeff}
+    .col-7{grid-column: span 7;}
+    .col-5{grid-column: span 5;}
+    h2{color:#cfe3ff;margin:0 0 8px;font-size:1.05rem}
+    p.small{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.45}
+    ul.clean{margin:10px 0 0;padding-left:18px;color:#d7e6ff}
+    li.small-item{margin:6px 0}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:8px}
+    .proj{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+    .meta{color:var(--muted);font-size:0.88rem}
+    .cta-row{display:flex;gap:10px;margin-top:12px}
+    .btn{
+      background:var(--accent);color:#04233a;padding:10px 14px;border-radius:10px;border:0;font-weight:600;
+      cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:10px;
+      box-shadow:0 6px 18px rgba(79,140,255,0.12);
     }
-    @media (max-width: 600px) {
-      section { padding: 1rem; margin: 0.5rem; }
+    .ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:10px 12px;border-radius:10px}
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:0.9rem;padding:10px}
+    @media (max-width:900px){
+      .grid{grid-template-columns:repeat(1,1fr)}
+      .col-7,.col-5{grid-column: auto}
+      .projects{grid-template-columns:repeat(1,1fr)}
+      .avatar{width:96px;height:96px;font-size:22px}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Niloofar Jazaeri</h1>
-    <p class="meta">Ph.D. Candidate in Computer Science — University of Ottawa</p>
-    <div class="contact">
-      📍 Sandy Hill, Ottawa, Ontario, Canada<br>
-      ✉️ <span title="email-obfuscated">niloofar.jazayeri49 [at] gmail [dot] com</span> • 
-      <a href="https://linkedin.com/in/niloofarjazaeri" target="_blank" rel="noopener">LinkedIn</a> • 
-      <a href="https://github.com/nilooofarrr" target="_blank" rel="noopener">GitHub</a>
+  <div class="wrap">
+    <!-- HERO -->
+    <header class="hero card" role="banner">
+      <div class="avatar" aria-hidden="true">NJ</div>
+      <div class="hero-text">
+        <h1>I am <strong>Niloofar Jazaeri</strong>, senior data science researcher & Ph.D. candidate.</h1>
+        <p class="lead">
+          I build robust machine learning and generative-AI systems that move from research to production — especially for audio, time-series, and infrastructure problems.
+          I split my time between Ph.D. work (University of Ottawa), applied projects with NRC & Crynostics, and mentoring early-career researchers.
+        </p>
+
+        <div class="badges" aria-hidden="false">
+          <span class="badge">Ph.D. Candidate — uOttawa (expected Aug 2027)</span>
+          <span class="badge">Audio & Time-Series Specialist</span>
+          <span class="badge">Continual & Generative Learning</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn" href="#projects">Selected Work</a>
+          <a class="ghost" href="#contact" aria-label="Contact">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN GRID -->
+    <div class="grid" role="main">
+      <!-- Left: About & Projects -->
+      <section class="col-7 card" aria-labelledby="about">
+        <h2 id="about">About — quick story</h2>
+        <p class="small">
+          I combine principled signal processing with modern deep learning to tackle real-world problems. Over the past five years I have led and shipped research that improves model robustness and practical deployability:
+        </p>
+
+        <ul class="clean" aria-hidden="false">
+          <li class="small-item"><strong>Impact-first focus:</strong> I improved model robustness by ~15% on infant-cry classification through feature fusion and continual learning.</li>
+          <li class="small-item"><strong>Generative solutions:</strong> I applied CTGAN/LSTM pipelines to mitigate class imbalance in watermain-break prediction — lifting rare-event recall by ~20% in production-style validation.</li>
+          <li class="small-item"><strong>Mentorship & collaboration:</strong> I mentor Mitacs interns and collaborate across university, industry, and government partners to turn prototypes into reproducible tools.</li>
+        </ul>
+
+        <h2 style="margin-top:18px">Selected projects</h2>
+        <div class="projects" id="projects">
+          <div class="proj">
+            <strong>Infant Cry Cause Classification</strong>
+            <div class="meta">Multi-branch audio encoder + LMU temporal model • Result: +15% F1 via feature fusion & domain adaptation</div>
+          </div>
+          <div class="proj">
+            <strong>Watermain Break Prediction (NRC)</strong>
+            <div class="meta">CTGAN for minority oversampling + deep time-series classifier • Result: +20% rare-event recall</div>
+          </div>
+          <div class="proj">
+            <strong>Robust Few-Shot & Active Learning</strong>
+            <div class="meta">Prototypical Networks & loss-prediction models to reduce annotation cost on segmentation datasets.</div>
+          </div>
+          <div class="proj">
+            <strong>DOA & Beamforming for Audio Enhancement</strong>
+            <div class="meta">Applied array processing to isolate speakers and improve downstream classification in noisy conditions.</div>
+          </div>
+        </div>
+
+        <h2 style="margin-top:18px">How I work</h2>
+        <p class="small">
+          I prioritize <strong>reproducibility</strong>, compact models that meet deployment constraints, and human-in-the-loop processes for labeling and continual updates. In practice that means unit-tested pipelines, small model checkpoints, and monitoring the model's drift after deployment.
+        </p>
+      </section>
+
+      <!-- Right: Experience / Publications / Skills -->
+      <aside class="col-5 card" aria-labelledby="profile">
+        <h2 id="profile">Experience & Roles</h2>
+        <p class="meta">I split my time between research, contract work, and mentorship.</p>
+        <ul class="clean" style="margin-top:8px">
+          <li class="small-item"><strong>National Research Council (NRC)</strong> — Data Science Researcher (Sep 2024–Present)</li>
+          <li class="small-item"><strong>Mitacs</strong> — Data Science Mentor (Mar 2025–Present)</li>
+          <li class="small-item"><strong>University of Ottawa (Crynostics)</strong> — Machine Learning Researcher (Jun 2023–Present)</li>
+          <li class="small-item"><strong>Industry roles</strong> — Asan Pardakht, DataColab, Mohaymen (2021–2023)</li>
+        </ul>
+
+        <h2 style="margin-top:14px">Selected publications</h2>
+        <ul class="clean">
+          <li class="small-item"><strong>2025</strong>: Mitigating Class Imbalance in Watermain Break Prediction Using CTGAN and Deep Learning Models — <em>in submission process</em>.</li>
+          <li class="small-item"><strong>2025</strong>: Infant Cry Cause Classification via Acoustic Representation Learning and Sequential Domain Adaptation — ICASSP — <em>in submission process</em>.</li>
+          <li class="small-item"><strong>2022</strong>: Medical Image Segmentation Using Topological Data Analysis — IEEE.</li>
+          <li class="small-item"><strong>2020</strong>: Breast Cancer Diagnosis with Genomic Data — Springer.</li>
+        </ul>
+
+        <h2 style="margin-top:14px">Skills & Tools</h2>
+        <p class="small"><strong>Languages:</strong> Python, MATLAB, C/C++, SQL</p>
+        <p class="small"><strong>Frameworks:</strong> TensorFlow, PyTorch, Librosa, OpenCV, Pandas</p>
+        <p class="small"><strong>Expertise:</strong> Audio & Time-Series, Generative Models, Continual Learning, Signal Processing</p>
+
+        <h2 style="margin-top:14px">Recognition</h2>
+        <p class="small">University of Ottawa scholarships & awards for research and leadership; active contributor to open-source pipelines and reproducible notebooks.</p>
+
+        <div style="margin-top:12px">
+          <a class="btn" href="#contact" style="display:inline-block">Say hello</a>
+          <a class="ghost" href="https://github.com/nilooofarrr" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </aside>
     </div>
-  </header>
 
-  <section>
-    <h2>Summary</h2>
-    <p>
-      Ph.D. student in Computer Science at the University of Ottawa (expected 2027), 
-      specializing in machine learning and generative AI for healthcare, fintech, and 
-      academic research. Experienced data scientist with 5+ years in scalable pipelines, 
-      continual and generative learning, and cross-functional research leadership. 
-      Dedicated to ethical, efficient, and deployable AI systems.
-    </p>
-  </section>
+    <!-- FOOTER / CONTACT -->
+    <section id="contact" class="card" style="margin-top:18px">
+      <h2>Contact</h2>
+      <p class="small">
+        I'm open to research collaborations, internships, and industry roles that bridge theory and production.
+        <br><strong>Email (obfuscated):</strong> <span title="email-obfuscated">niloofar.jazayeri49 [at] gmail [dot] com</span>
+      </p>
+      <p class="small" style="margin-top:8px;color:var(--muted)">
+        Replace <code>[at]</code> → <code>@</code> and <code>[dot]</code> → <code>.</code> to send a message. (This simple obfuscation reduces casual scraping.)
+      </p>
+    </section>
 
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li><b>University of Ottawa</b>, Ph.D. in Computer Science (Sep 2023 – Aug 2027, expected)</li>
-      <li><b>AmirKabir University of Technology</b>, M.Sc. in Mathematics (Sep 2019 – Sep 2021)</li>
-      <li><b>University of Tehran</b>, M.Sc. in Computer Science (Sep 2017 – Sep 2019)</li>
-      <li><b>AmirKabir University of Technology</b>, B.Sc. in Computer Science (Sep 2012 – Nov 2016)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Work Experience</h2>
-    <ul>
-      <li><b>National Research Council Canada (NRC)</b> — Data Science Researcher (Contract, Part-time Hybrid, Sep 2024–Present)</li>
-      <li><b>Mitacs</b> — Data Science Mentor (Contract, Remote, Mar 2025–Present)</li>
-      <li><b>University of Ottawa (in collaboration with Crynostics Inc.)</b> — Machine Learning Researcher (Full-time Hybrid, Jun 2023–Present)</li>
-      <li><b>Asan Pardakht (Co-Banking)</b> — Data Scientist & ML Engineer (Jun 2022–Jun 2023)</li>
-      <li><b>DataColab</b> — Data Scientist & ML Engineer (Mar 2022–Jun 2022)</li>
-      <li><b>Mohaymen (MCI Service)</b> — Data Scientist (Sep 2021–Mar 2022)</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Research Projects</h2>
-    <ul>
-      <li><b>Robust Meta-Learning for Few-Shot Learning</b>: Implemented Prototypical Networks; 7% robustness improvement over MAML on Omniglot.</li>
-      <li><b>Learning Loss for Active Learning</b>: Loss-prediction model for image segmentation, reducing loss by ~10% on COCO.</li>
-      <li><b>Neural Response-Based Sound Classification</b>: Developed classical and ensemble classifiers for auditory response datasets.</li>
-      <li><b>Direction of Arrival Estimation</b>: DOA and beamforming techniques for speaker isolation and audio enhancement.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><b>Languages:</b> Python, MATLAB, C/C++, Java, JavaScript, SQL</li>
-      <li><b>Tools & Frameworks:</b> TensorFlow, PyTorch, OpenCV, Pandas, SciPy, Librosa, Matplotlib</li>
-      <li><b>Expertise:</b> Deep Learning (CNN, RNN, GAN, LSTM, Transformers), Time Series, Signal Processing</li>
-      <li><b>Soft Skills:</b> Leadership, Mentorship, Analytical Thinking, Technical Communication</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Publications (Selected)</h2>
-    <ul>
-      <li><b>2025:</b> Mitigating Class Imbalance in Watermain Break Prediction Using CTGAN and Deep Learning Models — <em>in submission process</em>.</li>
-      <li><b>2025:</b> Infant Cry Cause Classification via Acoustic Representation Learning and Sequential Domain Adaptation — ICASSP; <em>in submission process</em>.</li>
-      <li><b>2022:</b> Medical Image Segmentation Using Topological Data Analysis, IEEE — Improved segmentation accuracy by 20% using persistent homology.</li>
-      <li><b>2020:</b> Breast Cancer Diagnosis with Genomic Data, Springer — Applied NMF for feature reduction on DNA methylation data.</li>
-      <li><b>2018:</b> Brain Tumor Classification, Elsevier — Achieved 93.68% accuracy using CNN and ELM on MRI images.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Teaching & Volunteering</h2>
-    <ul>
-      <li><b>Teaching Assistant</b>, University of Ottawa (Sep 2023–Dec 2023)</li>
-      <li><b>Teaching Assistant</b>, University of Tehran (Sep 2019–Dec 2020)</li>
-      <li>Graduate Student Association Representative, uOttawa (Apr 2025–Present)</li>
-      <li>Mentor, Software Product Management, uOttawa (Sep 2023–Present)</li>
-      <li>Volunteer Staff, Ottawa Mission & Ottawa Swing Dance Society (Dec 2024–Present / Apr 2025–Present)</li>
-    </ul>
-  </section>
-
-  <footer>
-    © 2025 Niloofar Jazaeri — Built with GitHub Pages
-  </footer>
+    <footer>
+      © 2025 Niloofar Jazaeri — Ph.D. Candidate • Built for clarity & reproducibility
+    </footer>
+  </div>
 </body>
 </html>
