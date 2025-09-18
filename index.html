@@ -23,35 +23,38 @@
     section { 
       padding: 2rem; 
       max-width: 900px; 
-      margin: auto; 
+      margin: 1rem auto; 
       background: white; 
-      margin-bottom: 1rem;
       border-radius: 6px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
     h2 { color: #003366; border-bottom: 2px solid #eee; padding-bottom: .3rem; }
     ul { padding-left: 1.2rem; }
     .contact { margin-top: .5rem; }
-    .contact a { color: #0066cc; text-decoration: none; }
+    .contact a { color: #a9d2ff; text-decoration: none; }
+    .meta { color: #dfeeff; margin-top: .4rem; font-size: 0.95rem; }
     footer { 
       text-align: center; 
       padding: 1rem; 
       font-size: 0.9em; 
       background: #003366; 
       color: white; 
+      margin-top: 1rem;
+    }
+    @media (max-width: 600px) {
+      section { padding: 1rem; margin: 0.5rem; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Niloofar Jazaeri</h1>
-    <p>Ph.D. Candidate in Computer Science — University of Ottawa</p>
+    <p class="meta">Ph.D. Candidate in Computer Science — University of Ottawa</p>
     <div class="contact">
-      📍 Sandy Hill, Ottawa, Ontario, Canada <br>
-      📞 343-988-5629 • 
-      ✉️ <a href="mailto:niloofar.jazayeri49@gmail.com">niloofar.jazayeri49@gmail.com</a> • 
-      <a href="https://linkedin.com/in/niloofarjazaeri" target="_blank">LinkedIn</a> • 
-      <a href="https://github.com/nilooofarrr" target="_blank">GitHub</a>
+      📍 Sandy Hill, Ottawa, Ontario, Canada<br>
+      ✉️ <span title="email-obfuscated">niloofar.jazayeri49 [at] gmail [dot] com</span> • 
+      <a href="https://linkedin.com/in/niloofarjazaeri" target="_blank" rel="noopener">LinkedIn</a> • 
+      <a href="https://github.com/nilooofarrr" target="_blank" rel="noopener">GitHub</a>
     </div>
   </header>
 
@@ -69,62 +72,64 @@
   <section>
     <h2>Education</h2>
     <ul>
-      <li><b>University of Ottawa</b>, Ph.D. in Computer Science (2023–2027, expected)</li>
-      <li><b>AmirKabir University of Technology</b>, M.Sc. in Mathematics (2019–2021)</li>
-      <li><b>University of Tehran</b>, M.Sc. in Computer Science (2017–2019)</li>
-      <li><b>AmirKabir University of Technology</b>, B.Sc. in Computer Science (2012–2016)</li>
+      <li><b>University of Ottawa</b>, Ph.D. in Computer Science (Sep 2023 – Aug 2027, expected)</li>
+      <li><b>AmirKabir University of Technology</b>, M.Sc. in Mathematics (Sep 2019 – Sep 2021)</li>
+      <li><b>University of Tehran</b>, M.Sc. in Computer Science (Sep 2017 – Sep 2019)</li>
+      <li><b>AmirKabir University of Technology</b>, B.Sc. in Computer Science (Sep 2012 – Nov 2016)</li>
     </ul>
   </section>
 
   <section>
     <h2>Work Experience</h2>
     <ul>
-      <li><b>National Research Council Canada (NRC)</b> — Data Science Researcher (2024–Present)</li>
-      <li><b>Mitacs</b> — Data Science Mentor (2025–Present)</li>
-      <li><b>University of Ottawa (Crynostics Inc.)</b> — Machine Learning Researcher (2023–Present)</li>
-      <li><b>Asan Pardakht</b> — Data Scientist / ML Engineer (2022–2023)</li>
-      <li><b>DataColab</b> — Data Scientist / ML Engineer (2022)</li>
-      <li><b>Mohaymen (MCI Service)</b> — Data Scientist (2021–2022)</li>
+      <li><b>National Research Council Canada (NRC)</b> — Data Science Researcher (Contract, Part-time Hybrid, Sep 2024–Present)</li>
+      <li><b>Mitacs</b> — Data Science Mentor (Contract, Remote, Mar 2025–Present)</li>
+      <li><b>University of Ottawa (in collaboration with Crynostics Inc.)</b> — Machine Learning Researcher (Full-time Hybrid, Jun 2023–Present)</li>
+      <li><b>Asan Pardakht (Co-Banking)</b> — Data Scientist & ML Engineer (Jun 2022–Jun 2023)</li>
+      <li><b>DataColab</b> — Data Scientist & ML Engineer (Mar 2022–Jun 2022)</li>
+      <li><b>Mohaymen (MCI Service)</b> — Data Scientist (Sep 2021–Mar 2022)</li>
     </ul>
   </section>
 
   <section>
     <h2>Research Projects</h2>
     <ul>
-      <li>Robust Meta-Learning for Few-Shot Learning</li>
-      <li>Learning Loss for Active Learning</li>
-      <li>Neural Response-Based Sound Classification</li>
-      <li>Direction of Arrival Estimation (DOA, Beamforming)</li>
+      <li><b>Robust Meta-Learning for Few-Shot Learning</b>: Implemented Prototypical Networks; 7% robustness improvement over MAML on Omniglot.</li>
+      <li><b>Learning Loss for Active Learning</b>: Loss-prediction model for image segmentation, reducing loss by ~10% on COCO.</li>
+      <li><b>Neural Response-Based Sound Classification</b>: Developed classical and ensemble classifiers for auditory response datasets.</li>
+      <li><b>Direction of Arrival Estimation</b>: DOA and beamforming techniques for speaker isolation and audio enhancement.</li>
     </ul>
   </section>
 
   <section>
     <h2>Skills</h2>
     <ul>
-      <li><b>Languages:</b> Python, MATLAB, C/C++, Java, JavaScript, SQL, Power BI, Excel</li>
-      <li><b>Frameworks:</b> TensorFlow, PyTorch, OpenCV, Pandas, SciPy, Librosa</li>
-      <li><b>Expertise:</b> Deep Learning, Generative Models, Time Series, Signal Processing</li>
-      <li><b>Soft Skills:</b> Leadership, Mentorship, Analytical Thinking, Communication</li>
+      <li><b>Languages:</b> Python, MATLAB, C/C++, Java, JavaScript, SQL</li>
+      <li><b>Tools & Frameworks:</b> TensorFlow, PyTorch, OpenCV, Pandas, SciPy, Librosa, Matplotlib</li>
+      <li><b>Expertise:</b> Deep Learning (CNN, RNN, GAN, LSTM, Transformers), Time Series, Signal Processing</li>
+      <li><b>Soft Skills:</b> Leadership, Mentorship, Analytical Thinking, Technical Communication</li>
     </ul>
   </section>
 
   <section>
     <h2>Publications (Selected)</h2>
     <ul>
-      <li><b>2025:</b> Mitigating Class Imbalance in Watermain Break Prediction (under review)</li>
-      <li><b>2025:</b> Infant Cry Cause Classification (ICASSP, under review)</li>
-      <li><b>2022:</b> Medical Image Segmentation Using Topological Data Analysis, IEEE</li>
-      <li><b>2020:</b> Breast Cancer Diagnosis with Genomic Data, Springer</li>
-      <li><b>2018:</b> Brain Tumor Classification, Elsevier</li>
+      <li><b>2025:</b> Mitigating Class Imbalance in Watermain Break Prediction Using CTGAN and Deep Learning Models — <em>in submission process</em>.</li>
+      <li><b>2025:</b> Infant Cry Cause Classification via Acoustic Representation Learning and Sequential Domain Adaptation — ICASSP; <em>in submission process</em>.</li>
+      <li><b>2022:</b> Medical Image Segmentation Using Topological Data Analysis, IEEE — Improved segmentation accuracy by 20% using persistent homology.</li>
+      <li><b>2020:</b> Breast Cancer Diagnosis with Genomic Data, Springer — Applied NMF for feature reduction on DNA methylation data.</li>
+      <li><b>2018:</b> Brain Tumor Classification, Elsevier — Achieved 93.68% accuracy using CNN and ELM on MRI images.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Volunteering</h2>
+    <h2>Teaching & Volunteering</h2>
     <ul>
-      <li>Graduate Student Association Rep, uOttawa</li>
-      <li>Mentor, Software Product Management, uOttawa</li>
-      <li>Volunteer Staff, Ottawa Mission & Swing Dance Society</li>
+      <li><b>Teaching Assistant</b>, University of Ottawa (Sep 2023–Dec 2023)</li>
+      <li><b>Teaching Assistant</b>, University of Tehran (Sep 2019–Dec 2020)</li>
+      <li>Graduate Student Association Representative, uOttawa (Apr 2025–Present)</li>
+      <li>Mentor, Software Product Management, uOttawa (Sep 2023–Present)</li>
+      <li>Volunteer Staff, Ottawa Mission & Ottawa Swing Dance Society (Dec 2024–Present / Apr 2025–Present)</li>
     </ul>
   </section>
 
