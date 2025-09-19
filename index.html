@@ -54,12 +54,26 @@
       box-shadow:0 6px 18px rgba(79,140,255,0.12);
     }
     .ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:10px 12px;border-radius:10px}
-    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:0.9rem;padding:10px}
+    .socials{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+    .socials a{color:var(--muted);text-decoration:none;font-size:0.92rem;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.012)}
+    /* Origami / hobby photo */
+    .hobby-photo{
+      width:160px;
+      height:160px;
+      object-fit:cover;
+      border-radius:10px;
+      margin-left:12px;
+      float:right;
+      box-shadow:0 8px 20px rgba(2,6,23,0.6);
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    footer{margin-top:22px;text-align:center;color:var(--muted);font-size:0.9rem;padding:10px;clear:both}
     @media (max-width:900px){
       .grid{grid-template-columns:repeat(1,1fr)}
       .col-7,.col-5{grid-column: auto}
       .projects{grid-template-columns:repeat(1,1fr)}
       .avatar{width:96px;height:96px;font-size:22px}
+      .hobby-photo{float:none;display:block;margin:0 auto 12px;width:140px;height:140px}
     }
   </style>
 </head>
@@ -89,6 +103,14 @@
         <div class="cta-row">
           <a class="btn" href="#projects">Selected Work</a>
           <a class="ghost" href="#contact" aria-label="Contact">Contact</a>
+        </div>
+
+        <div class="socials" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/niloofarjazaeri/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/nilooofarrr" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=ULfDO0EAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+          <a href="https://uniweb.uottawa.ca/network/profile/members/5994?lang=fr" target="_blank" rel="noopener noreferrer">uOttawa profile</a>
+          <a href="https://www.facebook.com/profile.php?id=61556088251596" target="_blank" rel="noopener noreferrer">Facebook</a>
         </div>
       </div>
     </header>
@@ -134,6 +156,14 @@
         <p class="small">
           I prioritize <strong>reproducibility</strong>, compact models that meet deployment constraints, and human-in-the-loop processes for labeling and continual updates. In practice that means unit-tested pipelines, small model checkpoints, and monitoring model drift post-deployment.
         </p>
+
+        <h2 style="margin-top:18px">Interests & Hobbies</h2>
+        <!-- Origami photo placed next to the hobbies text -->
+        <img class="hobby-photo" src="photo_2024-02-11_23-26-59.jpg" alt="Origami by Niloofar Jazaeri" loading="lazy">
+        <p class="small">
+          Outside of research I love walking, biking, and spending time in nature. I enjoy making origami, listening to music, and curating home décor — small ways I recharge and stay curious.
+        </p>
+        <div style="clear:both"></div>
       </section>
 
       <!-- Right: Experience / Publications / Skills -->
@@ -176,7 +206,7 @@
 
         <div style="margin-top:12px">
           <a class="btn" href="#contact" style="display:inline-block">Say hello</a>
-          <a class="ghost" href="https://github.com/nilooofarrr" target="_blank" rel="noopener">GitHub</a>
+          <a class="ghost" href="https://github.com/nilooofarrr" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
       </aside>
     </div>
