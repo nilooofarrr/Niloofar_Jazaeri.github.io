@@ -56,7 +56,7 @@
     .ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--muted);padding:10px 12px;border-radius:10px}
     .socials{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
     .socials a{color:var(--muted);text-decoration:none;font-size:0.92rem;padding:6px 8px;border-radius:8px;background:rgba(255,255,255,0.012)}
-    /* Origami / hobby photo */
+    /* Photos in the hobbies area */
     .hobby-photo{
       width:160px;
       height:160px;
@@ -67,6 +67,9 @@
       box-shadow:0 8px 20px rgba(2,6,23,0.6);
       border:1px solid rgba(255,255,255,0.03);
     }
+    /* container to hold two small hobby images side-by-side */
+    .hobby-photos-row{display:flex;gap:12px;justify-content:flex-end;align-items:flex-start}
+    .hobby-photos-row img{width:140px;height:140px;object-fit:cover;border-radius:10px}
     footer{margin-top:22px;text-align:center;color:var(--muted);font-size:0.9rem;padding:10px;clear:both}
     @media (max-width:900px){
       .grid{grid-template-columns:repeat(1,1fr)}
@@ -74,6 +77,8 @@
       .projects{grid-template-columns:repeat(1,1fr)}
       .avatar{width:96px;height:96px;font-size:22px}
       .hobby-photo{float:none;display:block;margin:0 auto 12px;width:140px;height:140px}
+      .hobby-photos-row{justify-content:center;flex-wrap:wrap}
+      .hobby-photos-row img{width:120px;height:120px}
     }
   </style>
 </head>
@@ -158,12 +163,17 @@
         </p>
 
         <h2 style="margin-top:18px">Interests & Hobbies</h2>
-        <!-- Origami photo placed next to the hobbies text -->
-        <img class="hobby-photo" src="photo_2024-02-11_23-26-59.jpg" alt="Origami by Niloofar Jazaeri" loading="lazy">
+
+        <!-- Two hobby photos side-by-side on desktop, stacked on mobile -->
+        <div class="hobby-photos-row" aria-hidden="false" style="margin-bottom:12px">
+          <img src="photo_2024-02-11_23-26-59.jpg" alt="Origami by Niloofar Jazaeri" loading="lazy">
+          <img src="vrset.jpg" alt="Niloofar wearing VR headset" loading="lazy">
+        </div>
+
         <p class="small">
           Outside of research I love walking, biking, and spending time in nature. I enjoy making origami, listening to music, and curating home décor — small ways I recharge and stay curious.
         </p>
-        <div style="clear:both"></div>
+
       </section>
 
       <!-- Right: Experience / Publications / Skills -->
